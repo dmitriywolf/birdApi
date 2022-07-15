@@ -1,0 +1,57 @@
+.editModal-wrap {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7)
+}
+
+.editModal {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  width: 400px;
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 8px;
+  transform: translate(-50%, -50%);
+
+  &__form {
+    display: flex;
+    flex-direction: column;
+    padding: 10px 0;
+  }
+
+  &__label {
+    width: 100%;
+    margin: 10px 0;
+
+    &-text {
+      font-size: 15px;
+      padding-bottom: 5px;
+    }
+  }
+
+  &__input {
+    width: 100%;
+    padding: 14px;
+    border: 1px solid gray;
+    border-radius: 4px;
+
+    &::placeholder {
+      color: re
+    }
+  }
+
+  &__actions {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    max-width: 200px;
+    margin: 10px auto 0;
+  }
+}
+
+
+

@@ -1,0 +1,32 @@
+.addBtn{
+  width: 150px;
+  padding: 14px;
+  font-size: 20px;
+  font-weight: 500;
+  text-align: center;
+  color: #ffffff;
+  background: #3EBF8A;
+  border: none;
+  border-radius: 3px;
+
+  &:hover {
+    cursor: pointer;
+    background-color: #131831;
+  }
+}
+
+.simpleBtn {
+  padding: 0;
+  background-color: transparent;
+  border: none;
+
+  font-size: 18px;
+  font-weight: normal;
+  line-height: 1.22;
+  color: #697082;
+
+  &:hover {
+    color: #131831;
+    cursor: pointer;
+  }
+}
