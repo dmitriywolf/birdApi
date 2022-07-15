@@ -9,7 +9,7 @@ const BirdItem = ({bird}) => {
 
   const dispatch = useDispatch();
   const [isOpenEditBirdModal, setIsOpenEditBirdModal] = useState(false);
-  const {id, title, image, text} = bird;
+  const {_id, title, img, description} = bird;
 
   const openEditBirdModal = () => {
     setIsOpenEditBirdModal(true);
@@ -20,7 +20,7 @@ const BirdItem = ({bird}) => {
   }
 
   const deleteBird = () => {
-    dispatch(deleteBirdFetch(id))
+    dispatch(deleteBirdFetch(_id))
   }
 
   return (
@@ -28,13 +28,13 @@ const BirdItem = ({bird}) => {
     <div className="bird-item">
       <div className="bird-item__img-wr">
         <div className="bird-item__img">
-          <img src={image} alt={title}/>
+          <img src={img} alt={title}/>
         </div>
         <div className="bird-item__content-wr">
           <h3 className="bird-item__title">
             {title}
           </h3>
-          <p className="bird-item__text">{text}</p>
+          <p className="bird-item__text">{description}</p>
           <div className="bird-item__actions">
             <div className="bird-item__action">
               <Button onClick={openEditBirdModal}>Edit</Button>

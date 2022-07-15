@@ -8,8 +8,8 @@ const EditModal = ({isNewBirds, cancel, editBird}) => {
   const dispatch = useDispatch()
 
   const editTitle = editBird ? editBird.title : '';
-  const editImg = editBird ? editBird.image : '';
-  const editText = editBird ? editBird.text : '';
+  const editImg = editBird ? editBird.img : '';
+  const editText = editBird ? editBird.description : '';
   const [title, setTitle] = useState(editTitle);
   const [img, setImg] = useState(editImg);
   const [text, setText] = useState(editText);
@@ -34,11 +34,8 @@ const EditModal = ({isNewBirds, cancel, editBird}) => {
     if(isNewBirds) {
       reqObj = {
         title: title,
-        text: text,
-        image: img,
-        url: "http://mediafire.com/eros.jsp",
-        active: 1,
-        sort_order: 1
+        description: text,
+        img: img,
       }
 
       dispatch(addBirdFetch(reqObj));
@@ -47,14 +44,11 @@ const EditModal = ({isNewBirds, cancel, editBird}) => {
     } else {
       reqObj ={
         title: title,
-        text: text,
-        image: img,
-        url: editBird.url,
-        active: editBird.active,
-        sort_order: editBird.sort_order
+        description: text,
+        img: img,
       }
 
-      dispatch(editBirdFetch(reqObj, editBird.id));
+      dispatch(editBirdFetch(reqObj, editBird._id));
       cancel();
     }
   }
@@ -68,8 +62,8 @@ const EditModal = ({isNewBirds, cancel, editBird}) => {
           <input className="editModal__input" placeholder="Bird's name..." value={title} onChange={changeTitle}/>
         </label>
         <label className="editModal__label">
-        <p className="editModal__label-text">Bird's image</p>
-          <input className="editModal__input" placeholder="Bird's image..." value={img} onChange={changeImg}/>
+        <p className="editModal__label-text">Bird's image link</p>
+          <input className="editModal__input" placeholder="Bird's image link..." value={img} onChange={changeImg}/>
         </label>
         <label className="editModal__label">
           <p className="editModal__label-text">Bird's description</p>
