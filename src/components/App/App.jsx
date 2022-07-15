@@ -28,7 +28,7 @@ useEffect(() => {
     <div>
       <div className='app app__container'>
       <h1 className='app__title'>Birds Api</h1>
-      <Button addBtn onClick={openAddBirdModal}>Add bird</Button>
+      <Button addBtn onClick={openAddBirdModal}>Add animal</Button>
       <BirdsList birds={birds}/>
     </div>
     <div>
